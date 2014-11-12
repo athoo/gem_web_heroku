@@ -2,6 +2,7 @@
 %html
   %head
   %link{:rel => :stylesheet, :type => :"text/css", :href => "form.css"}
+  %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" }
   %body
     .ltp
       %p hello, this is the demo web
@@ -13,15 +14,21 @@
         %input{ :type => 'text', :name=> 'rank' }
         %br
         TLP:
-        %input{ :type => 'checkbox'}
+        %input{ :type => 'checkbox', :name =>'cat[]', :value => 'bltp' }
         %br
         ChineseLSA:
-        %input{ :type => 'checkbox'}
+        %input{ :type => 'checkbox', :name =>'cat[]', :value => 'bchineselsa'  }
         %br
         TFIDF:
-        %input{ :type => 'checkbox'}
+        %input{ :type => 'checkbox', :name =>'cat[]', :value => 'btfidf'}
         %br
         %input{ :type => 'submit'}
     .result
-      - @data.each do |i|
-        .line #{i}
+      - @data.each do |i,j|
+        .inputword #{i}
+        - j.each do |k,l|
+          .category
+            #{k}
+            - l.each do |x,y|
+              .word #{x}
+              .sim #{y}

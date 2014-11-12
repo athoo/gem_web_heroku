@@ -10,3 +10,7 @@
 p {
   color: red;
 }
+.category {
+width: 300px;
+float: left;
+}
