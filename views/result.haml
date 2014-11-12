@@ -1,0 +1,12 @@
+!!! 5
+%html
+  %head
+  %body
+    .ltp
+      %form{ :action => '/form', :method => 'post' }
+        %input{ :type => 'text', :name=> 'message' }
+        %input{ :type => 'text', :name=> 'rank' }
+        %input{ :type => 'submit'}
+    .result
+      - @data.each do |i|
+        .line #{i}

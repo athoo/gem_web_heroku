@@ -1,0 +1,12 @@
+.ltp {
+  color: blue;
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 10px;
+  solid: #700;
+}
+
+p {
+  color: red;
+}

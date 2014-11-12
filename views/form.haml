@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+  %link{:rel => :stylesheet, :type => :"text/css", :href => "form.css"}
+  %body
+    .ltp
+      %p hello, this is the demo web
+      %form{ :action => '/form', :method => 'post' }
+        Please input the word you want to check(one word every time):
+        %input{ :type => 'text', :name=> 'message' }
+        %br
+        Please input the top n results(n from 1 to 100):
+        %input{ :type => 'text', :name=> 'rank' }
+        %br
+        TLP:
+        %input{ :type => 'checkbox'}
+        %br
+        ChineseLSA:
+        %input{ :type => 'checkbox'}
+        %br
+        TFIDF:
+        %input{ :type => 'checkbox'}
+        %br
+        %input{ :type => 'submit'}
+    .result
+      - @data.each do |i|
+        .line #{i}
