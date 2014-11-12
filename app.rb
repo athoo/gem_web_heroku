@@ -49,6 +49,7 @@ class LTPCheckerApp < Sinatra::Base
     # @data = get_checklist(params[:message],params[:rank],params[:btfidf],params[:bltp],params[:bchineselsa])
     print params[:cat]
     @data = get_checklist(params[:message],params[:rank], params[:cat])
+    @len = params[:cat].length
     haml :form
   end
 

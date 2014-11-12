@@ -5,13 +5,13 @@
   %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" }
   %body
     .ltp
-      %p hello, this is the demo web
+      %p hello, this is the demo (v0.1)
       %form{ :action => '/form', :method => 'post' }
-        Please input the word you want to check(one word every time):
-        %input{ :type => 'text', :name=> 'message' }
+        Input the word:
+        %input{ :type => 'text', :name=> 'message', :placeholder => 'one word every time' }
         %br
-        Please input the top n results(n from 1 to 100):
-        %input{ :type => 'text', :name=> 'rank', :placeholder =>'type in text' }
+        Input the top n results:
+        %input{ :type => 'text', :name=> 'rank', :placeholder =>'n from 1 to 100' }
         %br
         TLP:
         %input{ :type => 'checkbox', :name =>'cat[]', :value => 'bltp' }
@@ -26,7 +26,7 @@
     .result
       - @data.each do |i,j|
         .inputword #{i}
-        .cats
+        .cats{ :style => "width:#{@len*3}00px"}
           - j.each do |k,l|
             .category
               #{k}
