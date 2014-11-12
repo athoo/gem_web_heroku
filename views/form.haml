@@ -11,7 +11,7 @@
         %input{ :type => 'text', :name=> 'message' }
         %br
         Please input the top n results(n from 1 to 100):
-        %input{ :type => 'text', :name=> 'rank' }
+        %input{ :type => 'text', :name=> 'rank', :placeholder =>'type in text' }
         %br
         TLP:
         %input{ :type => 'checkbox', :name =>'cat[]', :value => 'bltp' }
@@ -26,9 +26,12 @@
     .result
       - @data.each do |i,j|
         .inputword #{i}
-        - j.each do |k,l|
-          .category
-            #{k}
-            - l.each do |x,y|
-              .word #{x}
-              .sim #{y}
+        .cats
+          - j.each do |k,l|
+            .category
+              #{k}
+              - l.each do |x,y|
+                .row
+                  .word #{x}
+                  .sim #{y}
+          .clear
